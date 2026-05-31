@@ -4,12 +4,14 @@ export const profile = {
   theme: 'Explainable AI · Forecasting · Optimization · Decision-Support Systems',
   email: 'zahinfuad3i@gmail.com',
   site: 'https://zahinfuad.github.io',
-  cv: '/cv/khondaker-zahin-fuad-academic-cv.pdf',
+  cv: 'https://docs.google.com/document/d/e/2PACX-1vR1dzlaZ65I0V4BEhPdOBAvNTjWJkjhY2lxL3iqSgRijkYauNrdaA7LfGrJe93acg/pub',
+  headshot: '/images/zahin-fuad-headshot.png',
   links: {
-    scholar: '#google-scholar',
+    scholar: 'https://scholar.google.com/citations?user=krKZU7IAAAAJ',
     github: 'https://github.com/ZahinFuad',
-    linkedin: '#linkedin',
-    orcid: '#orcid'
+    linkedin: 'https://linkedin.com/in/zahin-fuad',
+    orcid: 'https://orcid.org/0009-0005-6567-2259',
+    researchGate: 'https://www.researchgate.net/profile/Khondaker-Fuad'
   }
 };
 

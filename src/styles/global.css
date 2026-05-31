@@ -195,14 +195,24 @@ p {
   box-shadow: var(--shadow);
 }
 
+.headshot,
 .headshot-placeholder {
   display: grid;
   width: 118px;
   height: 118px;
   margin-bottom: 1.4rem;
-  place-items: center;
   border: 1px solid var(--border);
   border-radius: 8px;
+}
+
+.headshot {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.headshot-placeholder {
+  place-items: center;
   background: linear-gradient(135deg, #e8f4f1, #f7faf9);
   color: var(--accent-strong);
 }

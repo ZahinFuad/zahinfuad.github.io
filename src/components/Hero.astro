@@ -16,9 +16,7 @@ import SocialLinks from './SocialLinks.astro';
       <SocialLinks />
     </div>
     <aside class="hero-panel" aria-label="Research profile summary">
-      <div class="headshot-placeholder" aria-label="Professional headshot placeholder">
-        <span>ZF</span>
-      </div>
+      <img class="headshot" src={profile.headshot} alt={`${profile.name} headshot`} />
       <h2>Research Theme</h2>
       <p>Applied AI for forecasting, optimization, and resilient decision-support systems.</p>
       <dl>
