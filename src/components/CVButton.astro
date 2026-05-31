@@ -8,4 +8,4 @@ interface Props {
 const { label = 'Download CV' } = Astro.props;
 ---
 
-<a class="button-link primary" href={profile.cv}>{label}</a>
+<a class="button-link primary" href={profile.cv} target="_blank" rel="noreferrer">{label}</a>

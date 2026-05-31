@@ -97,8 +97,8 @@ const researchAreas = [
       </div>
       <div class="action-panel">
         <CVButton />
-        <a class="button-link" href={profile.links.scholar}>View Google Scholar</a>
-        <a class="button-link" href={`mailto:${profile.email}`}>Email me</a>
+        <a class="button-link" href={profile.links.scholar} target="_blank" rel="noreferrer">View Google Scholar</a>
+        <a class="button-link" href={`mailto:${profile.email}`} target="_blank" rel="noreferrer">Email me</a>
       </div>
     </div>
   </section>
@@ -171,7 +171,7 @@ const researchAreas = [
         </p>
       </div>
       <div class="contact-card">
-        <p><strong>Email:</strong> <a href={`mailto:${profile.email}`}>{profile.email}</a></p>
+        <p><strong>Email:</strong> <a href={`mailto:${profile.email}`} target="_blank" rel="noreferrer">{profile.email}</a></p>
         <SocialLinks compact />
       </div>
     </div>

@@ -28,8 +28,8 @@ const pub = publication.data;
   <p>{pub.summary}</p>
   <TagList tags={pub.tags} />
   <div class="card-links">
-    {pub.doi && <a href={pub.doi}>DOI</a>}
-    {pub.repo ? <a href={pub.repo}>GitHub</a> : <span>GitHub coming soon</span>}
+    {pub.doi && <a href={pub.doi} target="_blank" rel="noreferrer">DOI</a>}
+    {pub.repo ? <a href={pub.repo} target="_blank" rel="noreferrer">GitHub</a> : <span>GitHub coming soon</span>}
     <details>
       <summary>BibTeX</summary>
       <pre>@inproceedings&#123;fuad{pub.year},

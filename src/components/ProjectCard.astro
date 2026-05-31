@@ -24,7 +24,7 @@ const item = project.data;
   <p class="highlight"><strong>Result focus:</strong> {item.highlight}</p>
   <TagList tags={item.tags} />
   <div class="card-links">
-    {item.repo ? <a href={item.repo}>GitHub</a> : <span>GitHub coming soon</span>}
-    {item.paper && <a href={item.paper}>Paper</a>}
+    {item.repo ? <a href={item.repo} target="_blank" rel="noreferrer">GitHub</a> : <span>GitHub coming soon</span>}
+    {item.paper && <a href={item.paper} target="_blank" rel="noreferrer">Paper</a>}
   </div>
 </article>
