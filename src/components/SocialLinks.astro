@@ -1,0 +1,23 @@
+---
+import { profile } from '../data/profile';
+
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+
+const links = [
+  { label: 'CV', href: profile.cv },
+  { label: 'Google Scholar', href: profile.links.scholar },
+  { label: 'GitHub', href: profile.links.github },
+  { label: 'LinkedIn', href: profile.links.linkedin },
+  { label: 'Email', href: `mailto:${profile.email}` }
+];
+---
+
+<div class:list={['social-links', compact && 'compact']}>
+  {links.map((link) => (
+    <a class="button-link" href={link.href}>{link.label}</a>
+  ))}
+</div>

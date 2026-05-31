@@ -1,0 +1,11 @@
+---
+import { profile } from '../data/profile';
+
+interface Props {
+  label?: string;
+}
+
+const { label = 'Download CV' } = Astro.props;
+---
+
+<a class="button-link primary" href={profile.cv}>{label}</a>

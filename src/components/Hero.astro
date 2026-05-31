@@ -1,0 +1,36 @@
+---
+import { profile } from '../data/profile';
+import SocialLinks from './SocialLinks.astro';
+---
+
+<section class="hero section" id="top" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Prospective PhD applicant · Intelligent Systems</p>
+      <h1 id="hero-title">{profile.name}</h1>
+      <p class="hero-role">{profile.role}</p>
+      <p class="hero-theme">{profile.theme}</p>
+      <p class="hero-bio">
+        I am an MSc Computer Science and Engineering graduate specializing in Intelligent Systems. My research focuses on applied AI methods for real-world forecasting, optimization, and resilient decision-making.
+      </p>
+      <SocialLinks />
+    </div>
+    <aside class="hero-panel" aria-label="Research profile summary">
+      <div class="headshot-placeholder" aria-label="Professional headshot placeholder">
+        <span>ZF</span>
+      </div>
+      <h2>Research Theme</h2>
+      <p>Applied AI for forecasting, optimization, and resilient decision-support systems.</p>
+      <dl>
+        <div>
+          <dt>Focus</dt>
+          <dd>XAI, forecasting, optimization, RL</dd>
+        </div>
+        <div>
+          <dt>Applications</dt>
+          <dd>Energy, agriculture, logistics, sustainability</dd>
+        </div>
+      </dl>
+    </aside>
+  </div>
+</section>

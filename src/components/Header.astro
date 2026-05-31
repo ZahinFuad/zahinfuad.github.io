@@ -1,0 +1,19 @@
+---
+const navItems = [
+  ['Research', '#research'],
+  ['Publications', '#publications'],
+  ['Projects', '#projects'],
+  ['CV', '#cv'],
+  ['Experience', '#experience'],
+  ['Contact', '#contact']
+];
+---
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Primary navigation">
+    <a class="brand" href="#top" aria-label="Khondaker Zahin Fuad home">ZF</a>
+    <div class="nav-links">
+      {navItems.map(([label, href]) => <a href={href}>{label}</a>)}
+    </div>
+  </nav>
+</header>

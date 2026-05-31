@@ -1,0 +1,42 @@
+---
+import TagList from './TagList.astro';
+
+interface Props {
+  publication: {
+    data: {
+      title: string;
+      authors: string;
+      venue: string;
+      year: number;
+      status: string;
+      doi?: string;
+      repo?: string;
+      tags: string[];
+      summary: string;
+    };
+  };
+}
+
+const { publication } = Astro.props;
+const pub = publication.data;
+---
+
+<article class="card publication-card">
+  <div class="card-kicker">{pub.status} · {pub.year}</div>
+  <h3>{pub.title}</h3>
+  <p class="muted">{pub.venue}</p>
+  <p>{pub.summary}</p>
+  <TagList tags={pub.tags} />
+  <div class="card-links">
+    {pub.doi && <a href={pub.doi}>DOI</a>}
+    {pub.repo ? <a href={pub.repo}>GitHub</a> : <span>GitHub coming soon</span>}
+    <details>
+      <summary>BibTeX</summary>
+      <pre>@inproceedings&#123;fuad{pub.year},
+  title = &#123;{pub.title}&#125;,
+  author = &#123;{pub.authors}&#125;,
+  year = &#123;{pub.year}&#125;
+&#125;</pre>
+    </details>
+  </div>
+</article>

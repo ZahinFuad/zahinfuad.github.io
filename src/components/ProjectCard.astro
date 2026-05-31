@@ -1,0 +1,30 @@
+---
+import TagList from './TagList.astro';
+
+interface Props {
+  project: {
+    data: {
+      title: string;
+      summary: string;
+      highlight: string;
+      repo?: string;
+      paper?: string;
+      tags: string[];
+    };
+  };
+}
+
+const { project } = Astro.props;
+const item = project.data;
+---
+
+<article class="card project-card">
+  <h3>{item.title}</h3>
+  <p>{item.summary}</p>
+  <p class="highlight"><strong>Result focus:</strong> {item.highlight}</p>
+  <TagList tags={item.tags} />
+  <div class="card-links">
+    {item.repo ? <a href={item.repo}>GitHub</a> : <span>GitHub coming soon</span>}
+    {item.paper && <a href={item.paper}>Paper</a>}
+  </div>
+</article>

@@ -1,0 +1,179 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ResearchInterestCard from '../components/ResearchInterestCard.astro';
+import PublicationCard from '../components/PublicationCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import NewsItem from '../components/NewsItem.astro';
+import CVButton from '../components/CVButton.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import { profile, researchInterests } from '../data/profile';
+
+const publications = (await getCollection('publications')).sort((a, b) => a.data.order - b.data.order);
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const news = (await getCollection('news')).sort((a, b) => a.data.order - b.data.order);
+
+const researchAreas = [
+  {
+    title: 'Explainable Forecasting Systems',
+    text: 'Temporal neural networks, renewable energy forecasting, XAI for transparency, and probabilistic multi-horizon forecasting.'
+  },
+  {
+    title: 'AI for Sustainable Optimization',
+    text: 'Machine learning surrogate models, multi-objective optimization, evolutionary algorithms, and agricultural decision-support systems.'
+  },
+  {
+    title: 'Reinforcement Learning for Resilient Systems',
+    text: 'Adaptive recovery, self-healing data systems, disaster-response logistics, and zero-downtime decision-support infrastructure.'
+  }
+];
+---
+
+<BaseLayout>
+  <Hero />
+
+  <section class="section" id="research" aria-labelledby="research-title">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Research Focus</p>
+        <h2 id="research-title">Applied AI for reliable decisions</h2>
+        <p>
+          My research focuses on applied artificial intelligence methods for forecasting, optimization, and resilient decision-support systems. I am particularly interested in interpretable models that can support high-stakes planning in energy, agriculture, logistics, and sustainability-focused domains.
+        </p>
+      </div>
+
+      <div class="interest-strip" aria-label="Research interests">
+        {researchInterests.map((interest) => <span>{interest}</span>)}
+      </div>
+
+      <div class="three-grid">
+        {researchAreas.map((area) => <ResearchInterestCard title={area.title} text={area.text} />)}
+      </div>
+
+      <div class="callout">
+        <h3>Future PhD interests</h3>
+        <p>
+          For PhD study, I am interested in developing reliable and interpretable AI systems that combine forecasting, optimization, and adaptive decision-making. I am especially interested in research groups working on explainable AI, reinforcement learning, intelligent systems, sustainable AI applications, and resilient data-driven infrastructure.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="publications" aria-labelledby="publications-title">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Publications</p>
+        <h2 id="publications-title">Selected research outputs</h2>
+        <p>Publication cards prioritize verifiable venues, repositories, DOI links, and concise research summaries.</p>
+      </div>
+      <div class="stack">
+        {publications.map((publication) => <PublicationCard publication={publication} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects" aria-labelledby="projects-title">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Projects</p>
+        <h2 id="projects-title">Research repositories and thesis work</h2>
+        <p>Projects connect implementation work with publications, methods, and application areas.</p>
+      </div>
+      <div class="two-grid">
+        {projects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="cv" aria-labelledby="cv-title">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Academic CV</p>
+        <h2 id="cv-title">Download the latest CV</h2>
+        <p>
+          The CV placeholder is ready for the academic PDF. This public page intentionally avoids exposing a phone number or full personal address.
+        </p>
+      </div>
+      <div class="action-panel">
+        <CVButton />
+        <a class="button-link" href={profile.links.scholar}>View Google Scholar</a>
+        <a class="button-link" href={`mailto:${profile.email}`}>Email me</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience" aria-labelledby="experience-title">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Background</p>
+        <h2 id="experience-title">Education, research, and industry experience</h2>
+      </div>
+
+      <div class="timeline-grid">
+        <article class="card">
+          <h3>Education</h3>
+          <div class="entry">
+            <h4>American International University-Bangladesh</h4>
+            <p>MSc Computer Science and Engineering, Intelligent Systems · 2024-2026</p>
+            <p class="muted">Thesis: Explainable Deep Learning for Probabilistic Multi-Horizon Solar Forecasting in Bangladesh</p>
+          </div>
+          <div class="entry">
+            <h4>Monash University Malaysia</h4>
+            <p>Bachelor of Engineering, Mechatronics (Honours) · 2017-2021</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Industry experience</h3>
+          <div class="entry">
+            <h4>Riseup Labs · Senior Marketing Executive</h4>
+            <p>2021-Present</p>
+            <ul class="clean-list">
+              <li>Conducted data-driven platform performance analysis using analytics dashboards.</li>
+              <li>Led structured information architecture and system optimization workflows.</li>
+              <li>Collaborated across product and engineering teams to improve system usability and user engagement.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Technical skills</h3>
+          <ul class="clean-list columns">
+            <li>Python</li>
+            <li>Machine learning</li>
+            <li>Deep learning</li>
+            <li>Time-series forecasting</li>
+            <li>Explainable AI</li>
+            <li>Optimization</li>
+            <li>Reinforcement learning</li>
+            <li>Research writing</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Recent news</h3>
+          <ul class="news-list">
+            {news.map((item) => <NewsItem item={item} />)}
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">Open to PhD opportunities for 2027</h2>
+        <p>
+          I am currently exploring PhD opportunities in AI, intelligent systems, explainable forecasting, optimization, and resilient decision-support systems.
+        </p>
+      </div>
+      <div class="contact-card">
+        <p><strong>Email:</strong> <a href={`mailto:${profile.email}`}>{profile.email}</a></p>
+        <SocialLinks compact />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

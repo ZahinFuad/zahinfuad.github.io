@@ -1,0 +1,17 @@
+---
+interface Props {
+  item: {
+    data: {
+      date: string;
+      text: string;
+    };
+  };
+}
+
+const { item } = Astro.props;
+---
+
+<li class="news-item">
+  <span>{item.data.date}</span>
+  <p>{item.data.text}</p>
+</li>
