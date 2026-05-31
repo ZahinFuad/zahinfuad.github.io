@@ -30,13 +30,5 @@ const pub = publication.data;
   <div class="card-links">
     {pub.doi && <a href={pub.doi} target="_blank" rel="noreferrer">DOI</a>}
     {pub.repo ? <a href={pub.repo} target="_blank" rel="noreferrer">GitHub</a> : <span>GitHub coming soon</span>}
-    <details>
-      <summary>BibTeX</summary>
-      <pre>@inproceedings&#123;fuad{pub.year},
-  title = &#123;{pub.title}&#125;,
-  author = &#123;{pub.authors}&#125;,
-  year = &#123;{pub.year}&#125;
-&#125;</pre>
-    </details>
   </div>
 </article>
