@@ -4,7 +4,7 @@ export const profile = {
   theme: 'Explainable AI · Forecasting · Optimization · Decision-Support Systems',
   email: 'zahinfuad3i@gmail.com',
   site: 'https://zahinfuad.github.io',
-  cv: 'https://docs.google.com/document/d/e/2PACX-1vR1dzlaZ65I0V4BEhPdOBAvNTjWJkjhY2lxL3iqSgRijkYauNrdaA7LfGrJe93acg/pub',
+  cv: 'https://docs.google.com/document/d/e/2PACX-1vTcMcGgR8ijisgPUMyK_ViD-dY06np9AuTAP6Z9JKWtcFlS7piKoSu7eTe0zTAKxQ/pub',
   headshot: '/images/zahin-fuad-headshot.png',
   links: {
     scholar: 'https://scholar.google.com/citations?user=krKZU7IAAAAJ',
