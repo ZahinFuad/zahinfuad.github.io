@@ -558,7 +558,7 @@ Purpose: Make supervisor outreach easy.
 Include:
 
 ```text
-Email: zahinfuad3i@gmail.com
+Email: khondakerzahinfuad@gmail.com
 Google Scholar
 GitHub
 LinkedIn
